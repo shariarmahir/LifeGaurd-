@@ -5,31 +5,14 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "public/build"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/index.html"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/dist/assets/$1"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/dist/.vite/manifest.json"
+      "dest": "/index.php"
     }
-  ],
-  "env": {
-    "APP_URL": "https://your-project.vercel.app",
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
+  ]
 }
